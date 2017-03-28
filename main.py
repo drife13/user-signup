@@ -64,6 +64,8 @@ def valid_username(u):
 
 USER_PW = re.compile(r"^.{3,20}$")
 def valid_password(p):
+    if " " in p:
+        return None
     return USER_PW.match(p)
 
 USER_EM = re.compile(r"^[\S]+@[\S]+.[\S]+$")
